@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ribbon
+    
+server:
+  port: 5004
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka #指定eureka服务器地址
+      

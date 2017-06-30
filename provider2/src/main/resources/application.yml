@@ -1,0 +1,29 @@
+server:
+  port: 5002
+spring:
+  application:
+    name: provider
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2                  #指定数据源类型
+    schema: classpath:schema.sql  #指定h2数据库的建表脚本
+    data: classpath:data.sql      #指定h2数据库的数据脚本
+    sql-script-encoding: utf-8
+    
+logging:  #配置日志级别，让hibernate打印执行的SQL
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka #指定eureka服务器地址
+      register-with-eureka: true
+      fetch-registry: true

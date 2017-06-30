@@ -1,0 +1,10 @@
+server:
+  port: 5000  #开启的端口
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #false表示不向不将自己注册到EurekaServer中。默认为false
+    fetch-registry: false #表示是否从Eureka获取注册信息。因为这是个单点Euraka server ,不需要同步其他EurakaServer中数据，故为false。默认true
+  server:
+    enable-self-preservation: false #禁止自我保护模式

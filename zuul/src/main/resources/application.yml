@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zuul
+    
+server:
+  port: 5005
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka #指定eureka服务器地址
+      
+zuul:
+  routes:
+    api-provider:
+      path: /provider/**
+      serviceId: provider
+    api-customer:
+      path: /customer/**
+      serviceId: customer
