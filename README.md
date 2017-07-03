@@ -1,6 +1,15 @@
+各个文件夹的介绍：
+ 1. customer文件夹，提供customer服务
+ 2. eureka文件夹,发现微服务
+ 3. img文件夹，是为了存放readme.md中的图片
+ 4. provider,provider2文件夹，是为负载均衡提供服务的，两个相同的服务模块
+ 5. ribbon文件夹，是负载均衡
+ 6. zuul文件夹，是为了路由转发用的。
+ 7. README.md，介绍
+ 
 ## springcloud组件的学习
 
-### 一、Euraka的使用
+### 一、Euraka的使用（启动eureka+provider模块）
 
  <span>Euraka是Netflix开源发现组件，包含Server和Client</span>  <span>启动eureka与provider模块项目</span>
 
@@ -26,7 +35,7 @@
 ###### d、.浏览器访问http://localhost:5000/ ，显示结果如下，表示PROVIDER服务在eureka注册成功。
 ![image](https://github.com/caov/springcloud/blob/master/img/provider_pic.png)
 
-### 二、Zuul(路由转发)的使用
+### 二、Zuul(路由转发)的使用（启动eureka+zuul+customer+provider模块）
 
 ###### a、pom.xml中引入
 ![image](https://github.com/caov/springcloud/blob/master/img/zuul_pom.png)
@@ -39,7 +48,7 @@
 ###### e、通过zuul访问customer模块。http://localhost:5005/customer/customer  通过链接customer转发到customer模块
 ![image](https://github.com/caov/springcloud/blob/master/img/zuul_cus.png)
 
-### 三、Ribbon（负载均衡）的使用
+### 三、Ribbon（负载均衡）的使用（启动eureka+ribbon+provider+provider2模块）
 
 ###### a、pom.xml中引入
 ![image](https://github.com/caov/springcloud/blob/master/img/ribbon_pom.png)
