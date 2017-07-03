@@ -1,0 +1,3 @@
+*.java linguist-language=java
+*.png linguist-language=java
+*.html linguist-language=java
